@@ -1,0 +1,20 @@
+Removed Member From Class: ClassName=Schematic_Drohne Member=LiPo Balance-Stecker IN
+Removed Member From Class: ClassName=Schematic_Drohne Member=LiPo Balance-Stecker OUT
+Added Component: Designator=LiPo Balance Stecker IN(CTB0502-4)
+Added Component: Designator=LiPo Balance Stecker OUT(CTB0502-4)
+Added Pin To Net: NetName=NetLiPo Balance Stecker IN_1 Pin=LiPo Balance Stecker IN-1
+Added Pin To Net: NetName=NetLiPo Balance Stecker IN_1 Pin=LiPo Balance Stecker OUT-4
+Added Net: Name=NetLiPo Balance Stecker IN_1
+Added Pin To Net: NetName=NetLiPo Balance Stecker IN_2 Pin=LiPo Balance Stecker IN-2
+Added Pin To Net: NetName=NetLiPo Balance Stecker IN_2 Pin=LiPo Balance Stecker OUT-3
+Added Net: Name=NetLiPo Balance Stecker IN_2
+Added Pin To Net: NetName=NetLiPo Balance Stecker IN_3 Pin=LiPo Balance Stecker IN-3
+Added Pin To Net: NetName=NetLiPo Balance Stecker IN_3 Pin=LiPo Balance Stecker OUT-2
+Added Net: Name=NetLiPo Balance Stecker IN_3
+Added Pin To Net: NetName=NetLiPo Balance Stecker IN_4 Pin=LiPo Balance Stecker IN-4
+Added Pin To Net: NetName=NetLiPo Balance Stecker IN_4 Pin=LiPo Balance Stecker OUT-1
+Added Net: Name=NetLiPo Balance Stecker IN_4
+Added Member To Class: ClassName=Schematic_Drohne Member=Component C1 100nF
+Added Member To Class: ClassName=Schematic_Drohne Member=Component C2 100uF
+Added Member To Class: ClassName=Schematic_Drohne Member=Component LiPo Balance Stecker IN Schraubklemme 1x4
+Added Member To Class: ClassName=Schematic_Drohne Member=Component LiPo Balance Stecker OUT Schraubklemme 1x4

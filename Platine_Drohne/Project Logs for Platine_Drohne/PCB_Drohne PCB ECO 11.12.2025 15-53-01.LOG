@@ -1,0 +1,14 @@
+Removed Pin From Net: NetName=NetBalance IN_1 Pin=D1-A
+Change Component Comment : Designator=R1 Old Comment=2.2K New Comment=5.6K
+Change Component Comment : Designator=R2 Old Comment=5.6K New Comment=2.2K
+Change component parameters: Designator = "R1" ("R1"); Footprint = "R_0204V/RM1 - 1k"; UniqueID = "\JUUTPOSX" ("\JUUTPOSX")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "07-Sep-2019"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "21-Feb-2011"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "5.6K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R2" ("R2"); Footprint = "R_0204V/RM1 - 1k"; UniqueID = "\RTLXDKDG" ("\RTLXDKDG")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "07-Sep-2019"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "21-Feb-2011"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "2.2K"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetBalance IN_2 Pin=D1-A

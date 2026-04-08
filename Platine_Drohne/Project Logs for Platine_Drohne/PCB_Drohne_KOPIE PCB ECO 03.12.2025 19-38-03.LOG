@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=ESP Pin 27 Pin=ESP-10
+Removed Pin From Net: NetName=ESP Pin 26 Pin=ESP-11
+Added Pin To Net: NetName=ESP Pin 26 Pin=ESP-10
+Added Pin To Net: NetName=ESP Pin 27 Pin=ESP-11

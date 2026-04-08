@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=NetA4988_1_11 Pin=Motoranschluss_1-1
+Removed Pin From Net: NetName=NetA4988_1_12 Pin=Motoranschluss_1-2
+Removed Pin From Net: NetName=NetA4988_1_13 Pin=Motoranschluss_1-3
+Removed Pin From Net: NetName=NetA4988_1_14 Pin=Motoranschluss_1-4
+Removed Pin From Net: NetName=NetA4988_2_11 Pin=Motoranschluss_2-1
+Removed Pin From Net: NetName=NetA4988_2_12 Pin=Motoranschluss_2-2
+Removed Pin From Net: NetName=NetA4988_2_13 Pin=Motoranschluss_2-3
+Removed Pin From Net: NetName=NetA4988_2_14 Pin=Motoranschluss_2-4
+Add Component: Footprint Not Found CTB0502-4
+Add Component: Footprint Not Found CTB0502-4
+Add Pin To Net: Unknown Pin: Pin Motoranschluss_1-1
+Add Pin To Net: Unknown Pin: Pin Motoranschluss_1-2
+Add Pin To Net: Unknown Pin: Pin Motoranschluss_1-3
+Add Pin To Net: Unknown Pin: Pin Motoranschluss_1-4
+Add Pin To Net: Unknown Pin: Pin Motoranschluss_2-1
+Add Pin To Net: Unknown Pin: Pin Motoranschluss_2-2
+Add Pin To Net: Unknown Pin: Pin Motoranschluss_2-3
+Add Pin To Net: Unknown Pin: Pin Motoranschluss_2-4

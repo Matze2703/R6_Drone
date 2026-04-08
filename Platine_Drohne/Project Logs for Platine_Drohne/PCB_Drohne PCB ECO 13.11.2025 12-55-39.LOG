@@ -1,0 +1,27 @@
+Removed Pin From Net: NetName=ESP Pin 27 Pin=-10
+Removed Pin From Net: NetName=ESP Pin 26 Pin=-11
+Removed Pin From Net: NetName=ESP Pin 14 Pin=-12
+Removed Pin From Net: NetName=ESP Pin 12 Pin=-13
+Removed Pin From Net: NetName=GND Pin=-14
+Removed Pin From Net: NetName=VCC 5V Pin=-19
+Removed Pin From Net: NetName=VCC 5V Pin=-20
+Removed Pin From Net: NetName=GND Pin=-31
+Removed Pin From Net: NetName=GND Pin=-32
+Removed Pin From Net: NetName=ESP Pin 4 Pin=-33
+Removed Pin From Net: NetName=ESP Pin 2 Pin=-35
+Removed Pin From Net: NetName=GND Pin=-40
+Removed Member From Class: ClassName=Schematic_Drohne Member=
+Added Component: Designator=ESP(ESP_WROVER_DEVKIT)
+Added Pin To Net: NetName=ESP Pin 27 Pin=ESP-10
+Added Pin To Net: NetName=ESP Pin 26 Pin=ESP-11
+Added Pin To Net: NetName=ESP Pin 14 Pin=ESP-12
+Added Pin To Net: NetName=ESP Pin 12 Pin=ESP-13
+Added Pin To Net: NetName=GND Pin=ESP-14
+Added Pin To Net: NetName=VCC 5V Pin=ESP-19
+Added Pin To Net: NetName=VCC 5V Pin=ESP-20
+Added Pin To Net: NetName=GND Pin=ESP-31
+Added Pin To Net: NetName=GND Pin=ESP-32
+Added Pin To Net: NetName=ESP Pin 4 Pin=ESP-33
+Added Pin To Net: NetName=ESP Pin 2 Pin=ESP-35
+Added Pin To Net: NetName=GND Pin=ESP-40
+Added Member To Class: ClassName=Schematic_Drohne Member=Component ESP ESP_WROVER_DEVKIT

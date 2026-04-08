@@ -1,0 +1,129 @@
+Change Component Footprint: Designator=C2 Old Footprint=C_POL_E3,5-8 x 11.5mm New Footprint=C_POL_RM2-10,5 x 12.5mm
+Change Component Designator: OldDesignator= NewDesignator=ESP
+Change component parameters: Designator = "C2" ("C2"); Footprint = "C_POL_E3,5-8 x 11.5mm"; UniqueID = "\IZLLBKGD" ("\IZLLBKGD")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "07-Sep-2019"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "21-Feb-2011"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rated Voltage"; Value = "63V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C4" ("C4"); Footprint = "C_POL_E3,5-8 x 11.5mm"; UniqueID = "\ZDRKSTTV" ("\ZDRKSTTV")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "07-Sep-2019"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "21-Feb-2011"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rated Voltage"; Value = "63V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C5" ("C5"); Footprint = "C_POL_E3,5-8 x 11.5mm"; UniqueID = "\SEGWQGXJ" ("\SEGWQGXJ")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "07-Sep-2019"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "21-Feb-2011"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rated Voltage"; Value = "63V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "470-1000uF"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=A4988_1-1
+Added Pin To Net: NetName=VCC 5V Pin=A4988_1-2
+Added Pin To Net: NetName=VCC 5V Pin=A4988_1-3
+Added Pin To Net: NetName=GND Pin=A4988_1-4
+Added Pin To Net: NetName=NetA4988_1_5 Pin=A4988_1-5
+Added Pin To Net: NetName=NetA4988_1_5 Pin=A4988_1-6
+Added Pin To Net: NetName=ESP Pin 26 Pin=A4988_1-7
+Added Pin To Net: NetName=ESP Pin 27 Pin=A4988_1-8
+Added Pin To Net: NetName=VCC 11.1V Pin=A4988_1-9
+Added Pin To Net: NetName=GND Pin=A4988_1-10
+Added Pin To Net: NetName=NetA4988_1_11 Pin=A4988_1-11
+Added Pin To Net: NetName=NetA4988_1_12 Pin=A4988_1-12
+Added Pin To Net: NetName=NetA4988_1_13 Pin=A4988_1-13
+Added Pin To Net: NetName=NetA4988_1_14 Pin=A4988_1-14
+Added Pin To Net: NetName=VCC 5V Pin=A4988_1-15
+Added Pin To Net: NetName=GND Pin=A4988_1-16
+Added Pin To Net: NetName=GND Pin=A4988_2-1
+Added Pin To Net: NetName=VCC 5V Pin=A4988_2-2
+Added Pin To Net: NetName=VCC 5V Pin=A4988_2-3
+Added Pin To Net: NetName=GND Pin=A4988_2-4
+Added Pin To Net: NetName=NetA4988_2_5 Pin=A4988_2-5
+Added Pin To Net: NetName=NetA4988_2_5 Pin=A4988_2-6
+Added Pin To Net: NetName=ESP Pin 12 Pin=A4988_2-7
+Added Pin To Net: NetName=ESP Pin 14 Pin=A4988_2-8
+Added Pin To Net: NetName=VCC 11.1V Pin=A4988_2-9
+Added Pin To Net: NetName=GND Pin=A4988_2-10
+Added Pin To Net: NetName=NetA4988_2_11 Pin=A4988_2-11
+Added Pin To Net: NetName=NetA4988_2_12 Pin=A4988_2-12
+Added Pin To Net: NetName=NetA4988_2_13 Pin=A4988_2-13
+Added Pin To Net: NetName=NetA4988_2_14 Pin=A4988_2-14
+Added Pin To Net: NetName=VCC 5V Pin=A4988_2-15
+Added Pin To Net: NetName=GND Pin=A4988_2-16
+Added Pin To Net: NetName=GND Pin=Akku-1
+Added Pin To Net: NetName=VCC 11.1V Pin=Akku-2
+Added Pin To Net: NetName=NetBalance IN_1 Pin=Balance IN-1
+Added Pin To Net: NetName=NetBalance IN_2 Pin=Balance IN-2
+Added Pin To Net: NetName=NetBalance IN_3 Pin=Balance IN-3
+Added Pin To Net: NetName=NetBalance IN_4 Pin=Balance IN-4
+Added Pin To Net: NetName=NetBalance IN_4 Pin=Balance OUT-1
+Added Pin To Net: NetName=NetBalance IN_3 Pin=Balance OUT-2
+Added Pin To Net: NetName=NetBalance IN_2 Pin=Balance OUT-3
+Added Pin To Net: NetName=NetBalance IN_1 Pin=Balance OUT-4
+Added Pin To Net: NetName=GND Pin=C1-1
+Added Pin To Net: NetName=VCC 11.1V Pin=C1-2
+Added Pin To Net: NetName=VCC 11.1V Pin=C2-1
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=GND Pin=C3-1
+Added Pin To Net: NetName=VCC 11.1V Pin=C3-2
+Added Pin To Net: NetName=VCC 11.1V Pin=C4-1
+Added Pin To Net: NetName=GND Pin=C4-2
+Added Pin To Net: NetName=VCC 5V Pin=C5-1
+Added Pin To Net: NetName=GND Pin=C5-2
+Added Pin To Net: NetName=VCC 5V Pin=C6-1
+Added Pin To Net: NetName=GND Pin=C6-2
+Added Pin To Net: NetName=NetBalance IN_1 Pin=D1-A
+Added Pin To Net: NetName=ESP Pin 4 Pin=D1-C
+Added Pin To Net: NetName=ESP Pin 27 Pin=ESP-10
+Added Pin To Net: NetName=ESP Pin 26 Pin=ESP-11
+Added Pin To Net: NetName=ESP Pin 14 Pin=ESP-12
+Added Pin To Net: NetName=ESP Pin 12 Pin=ESP-13
+Added Pin To Net: NetName=GND Pin=ESP-14
+Added Pin To Net: NetName=VCC 5V Pin=ESP-19
+Added Pin To Net: NetName=VCC 5V Pin=ESP-20
+Added Pin To Net: NetName=GND Pin=ESP-31
+Added Pin To Net: NetName=GND Pin=ESP-32
+Added Pin To Net: NetName=ESP Pin 4 Pin=ESP-33
+Added Pin To Net: NetName=ESP Pin 2 Pin=ESP-35
+Added Pin To Net: NetName=GND Pin=ESP-40
+Added Pin To Net: NetName=VCC 11.1V Pin=Ladestecker-1
+Added Pin To Net: NetName=GND Pin=Ladestecker-2
+Added Pin To Net: NetName=NetA4988_1_11 Pin=Motor_1-1
+Added Pin To Net: NetName=NetA4988_1_12 Pin=Motor_1-2
+Added Pin To Net: NetName=NetA4988_1_13 Pin=Motor_1-3
+Added Pin To Net: NetName=NetA4988_1_14 Pin=Motor_1-4
+Added Pin To Net: NetName=NetA4988_2_11 Pin=Motor_2-1
+Added Pin To Net: NetName=NetA4988_2_12 Pin=Motor_2-2
+Added Pin To Net: NetName=NetA4988_2_13 Pin=Motor_2-3
+Added Pin To Net: NetName=NetA4988_2_14 Pin=Motor_2-4
+Added Pin To Net: NetName=NetBalance IN_2 Pin=R1-1
+Added Pin To Net: NetName=ESP Pin 4 Pin=R1-2
+Added Pin To Net: NetName=ESP Pin 4 Pin=R2-1
+Added Pin To Net: NetName=NetBalance IN_1 Pin=R2-2
+Added Pin To Net: NetName=GND Pin=RGB-Streifen-1
+Added Pin To Net: NetName=ESP Pin 2 Pin=RGB-Streifen-2
+Added Pin To Net: NetName=VCC 5V Pin=RGB-Streifen-3
+Added Pin To Net: NetName=VCC 11.1V Pin=T1-1
+Added Pin To Net: NetName=GND Pin=T1-2
+Added Pin To Net: NetName=VCC 5V Pin=T1-3
+Added Member To Class: ClassName=Schematic_Drohne Member=Component A4988_1 Stepper_Driver
+Added Member To Class: ClassName=Schematic_Drohne Member=Component A4988_2 Stepper_Driver
+Added Member To Class: ClassName=Schematic_Drohne Member=Component Akku Schraubklemme
+Added Member To Class: ClassName=Schematic_Drohne Member=Component Balance IN Schraubklemme 1x4
+Added Member To Class: ClassName=Schematic_Drohne Member=Component Balance OUT Schraubklemme 1x4
+Added Member To Class: ClassName=Schematic_Drohne Member=Component C1 100nF
+Added Member To Class: ClassName=Schematic_Drohne Member=Component C2 100uF
+Added Member To Class: ClassName=Schematic_Drohne Member=Component C3 100nF
+Added Member To Class: ClassName=Schematic_Drohne Member=Component C4 100uF
+Added Member To Class: ClassName=Schematic_Drohne Member=Component C5 470-1000uF
+Added Member To Class: ClassName=Schematic_Drohne Member=Component C6 100nF
+Added Member To Class: ClassName=Schematic_Drohne Member=Component D1 BZX55C3V3
+Added Member To Class: ClassName=Schematic_Drohne Member=Component ESP ESP_WROVER_DEVKIT
+Added Member To Class: ClassName=Schematic_Drohne Member=Component Ladestecker Schraubklemme
+Added Member To Class: ClassName=Schematic_Drohne Member=Component Motor_1 Schraubklemme 1x4
+Added Member To Class: ClassName=Schematic_Drohne Member=Component Motor_2 Schraubklemme 1x4
+Added Member To Class: ClassName=Schematic_Drohne Member=Component R1 2.2K
+Added Member To Class: ClassName=Schematic_Drohne Member=Component R2 5.6K
+Added Member To Class: ClassName=Schematic_Drohne Member=Component RGB-Streifen
+Added Member To Class: ClassName=Schematic_Drohne Member=Component T1 TSR_converter
+Added Room: Name=Schematic_Drohne

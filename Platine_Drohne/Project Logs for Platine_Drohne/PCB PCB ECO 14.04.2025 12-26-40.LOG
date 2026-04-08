@@ -1,0 +1,65 @@
+Added Component: Designator=P1.1(HDR1X2)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P1.2(HDR1X2)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P2.1 Steppermotortreiber A4988(HDR1X10)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P2.2 Steppermotortreiber A4988(HDR1X10)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P4(HDR1X4)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=P1.1-2
+Added Pin To Net: NetName=GND Pin=P2.1 Steppermotortreiber A4988-2
+Added Pin To Net: NetName=GND Pin=P2.2 Steppermotortreiber A4988-2
+Added Net: Name=GND
+Added Pin To Net: NetName=NetP1.2_1 Pin=P1.2-1
+Added Pin To Net: NetName=NetP1.2_1 Pin=P2.1 Steppermotortreiber A4988-3
+Added Pin To Net: NetName=NetP1.2_1 Pin=P2.2 Steppermotortreiber A4988-3
+Added Net: Name=NetP1.2_1
+Added Pin To Net: NetName=NetP1.2_2 Pin=P1.2-2
+Added Pin To Net: NetName=NetP1.2_2 Pin=P2.1 Steppermotortreiber A4988-4
+Added Pin To Net: NetName=NetP1.2_2 Pin=P2.2 Steppermotortreiber A4988-4
+Added Pin To Net: NetName=NetP1.2_2 Pin=P4-4
+Added Net: Name=NetP1.2_2
+Added Pin To Net: NetName=NetP2.1 Steppermotortreiber A4988_5 Pin=P2.1 Steppermotortreiber A4988-5
+Added Net: Name=NetP2.1 Steppermotortreiber A4988_5
+Added Pin To Net: NetName=NetP2.1 Steppermotortreiber A4988_6 Pin=P2.1 Steppermotortreiber A4988-6
+Added Net: Name=NetP2.1 Steppermotortreiber A4988_6
+Added Pin To Net: NetName=NetP2.1 Steppermotortreiber A4988_7 Pin=P2.1 Steppermotortreiber A4988-7
+Added Pin To Net: NetName=NetP2.1 Steppermotortreiber A4988_7 Pin=P2.2 Steppermotortreiber A4988-7
+Added Net: Name=NetP2.1 Steppermotortreiber A4988_7
+Added Pin To Net: NetName=NetP2.1 Steppermotortreiber A4988_8 Pin=P2.1 Steppermotortreiber A4988-8
+Added Pin To Net: NetName=NetP2.1 Steppermotortreiber A4988_8 Pin=P2.2 Steppermotortreiber A4988-8
+Added Net: Name=NetP2.1 Steppermotortreiber A4988_8
+Added Pin To Net: NetName=NetP2.1 Steppermotortreiber A4988_9 Pin=P2.1 Steppermotortreiber A4988-9
+Added Pin To Net: NetName=NetP2.1 Steppermotortreiber A4988_9 Pin=P2.2 Steppermotortreiber A4988-9
+Added Net: Name=NetP2.1 Steppermotortreiber A4988_9
+Added Pin To Net: NetName=NetP2.1 Steppermotortreiber A4988_10 Pin=P2.1 Steppermotortreiber A4988-10
+Added Pin To Net: NetName=NetP2.1 Steppermotortreiber A4988_10 Pin=P2.2 Steppermotortreiber A4988-10
+Added Net: Name=NetP2.1 Steppermotortreiber A4988_10
+Added Pin To Net: NetName=NetP2.2 Steppermotortreiber A4988_5 Pin=P2.2 Steppermotortreiber A4988-5
+Added Net: Name=NetP2.2 Steppermotortreiber A4988_5
+Added Pin To Net: NetName=NetP2.2 Steppermotortreiber A4988_6 Pin=P2.2 Steppermotortreiber A4988-6
+Added Net: Name=NetP2.2 Steppermotortreiber A4988_6
+Added Pin To Net: NetName=NetP4_1 Pin=P4-1
+Added Net: Name=NetP4_1
+Added Pin To Net: NetName=NetP4_2 Pin=P4-2
+Added Net: Name=NetP4_2
+Added Pin To Net: NetName=NetP4_3 Pin=P4-3
+Added Net: Name=NetP4_3
+Added Pin To Net: NetName=VCC 12V Pin=P1.1-1
+Added Pin To Net: NetName=VCC 12V Pin=P2.1 Steppermotortreiber A4988-1
+Added Pin To Net: NetName=VCC 12V Pin=P2.2 Steppermotortreiber A4988-1
+Added Net: Name=VCC 12V
+Added Class: Name=Schematic_Drohne
+Added Room: Name=Schematic_Drohne

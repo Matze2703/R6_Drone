@@ -1,0 +1,13 @@
+ESP32-PS4:
+Wi-Fi Station (using 'esp_efuse_mac_get_default')	C8:C9:A3:C7:14:84
+WiFi Station (using 'esp_read_mac')			C8:C9:A3:C7:14:84
+WiFi Soft-AP (using 'esp_read_mac')			C8:C9:A3:C7:14:85
+Bluetooth (using 'esp_read_mac')			C8:C9:A3:C7:14:86
+Ethernet (using 'esp_read_mac')				C8:C9:A3:C7:14:87
+
+WROVER:
+Wi-Fi Station (using 'esp_efuse_mac_get_default')	B4:E6:2D:8D:C4:51
+WiFi Station (using 'esp_read_mac')			B4:E6:2D:8D:C4:51
+WiFi Soft-AP (using 'esp_read_mac')			B4:E6:2D:8D:C4:52
+Bluetooth (using 'esp_read_mac')			B4:E6:2D:8D:C4:53
+Ethernet (using 'esp_read_mac')				B4:E6:2D:8D:C4:54

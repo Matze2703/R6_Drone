@@ -1,0 +1,20 @@
+Removed Pin From Net: NetName=VCC 11.1V Pin=C1-1
+Removed Pin From Net: NetName=GND Pin=C1-2
+Removed Pin From Net: NetName=VCC 11.1V Pin=C3-1
+Removed Pin From Net: NetName=GND Pin=C3-2
+Change Component Footprint: Designator=C2 Old Footprint=C_POL_RM2-8,5 New Footprint=C_POL_E3,5-8 x 11.5mm
+Change Component Footprint: Designator=C4 Old Footprint=C_POL_RM2-8,5 New Footprint=C_POL_E3,5-8 x 11.5mm
+Change Component Footprint: Designator=C5 Old Footprint=C_POL_RM2-8,5 New Footprint=C_POL_E3,5-8 x 11.5mm
+Change Component Footprint: Designator=C1 Old Footprint=C_RM2-025X075 New Footprint=C_RM2-025X075 x 6.5mm
+Change Component Footprint: Designator=C3 Old Footprint=C_RM2-025X075 New Footprint=C_RM2-025X075 x 6.5mm
+Change Component Footprint: Designator=C6 Old Footprint=C_RM2-025X075 New Footprint=C_RM2-025X075 x 6.5mm
+Change component parameters: Designator = "C5" ("C5"); Footprint = "C_POL_RM2-8,5"; UniqueID = "\SEGWQGXJ" ("\SEGWQGXJ")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "07-Sep-2019"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "21-Feb-2011"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rated Voltage"; Value = "50V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100uF"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=C1-1
+Added Pin To Net: NetName=VCC 11.1V Pin=C1-2
+Added Pin To Net: NetName=GND Pin=C3-1
+Added Pin To Net: NetName=VCC 11.1V Pin=C3-2

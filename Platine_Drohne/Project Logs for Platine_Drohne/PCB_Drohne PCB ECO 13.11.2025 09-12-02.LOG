@@ -1,0 +1,8 @@
+Change Component Comment : Designator=C5 Old Comment=100uF New Comment=470-1000uF
+Change component parameters: Designator = "C5" ("C5"); Footprint = "C_POL_E3,5-8 x 11.5mm"; UniqueID = "\SEGWQGXJ" ("\SEGWQGXJ")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "07-Sep-2019"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "21-Feb-2011"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rated Voltage"; Value = "50V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "470-1000uF"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=Schematic_Drohne Member=Component  ESP_WROVER_DEVKIT

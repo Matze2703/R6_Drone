@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=VCC 11.1V Pin=LM2596-1
+Removed Pin From Net: NetName=GND Pin=LM2596-2
+Removed Pin From Net: NetName=VCC 5V Pin=LM2596-3
+Removed Pin From Net: NetName=GND Pin=LM2596-4
+Removed Member From Class: ClassName=Schematic_Drohne Member=LM2596
+Change Component Designator: OldDesignator= NewDesignator=LiPo Ladestecker
+Added Component: Designator=T1(PCBComponent_1)
+Added Pin To Net: NetName=VCC 11.1V Pin=T1-1
+Added Pin To Net: NetName=GND Pin=T1-2
+Added Pin To Net: NetName=VCC 5V Pin=T1-3
+Added Member To Class: ClassName=Schematic_Drohne Member=Component LiPo Ladestecker Schraubklemme
+Added Member To Class: ClassName=Schematic_Drohne Member=Component T1 TSR_converter

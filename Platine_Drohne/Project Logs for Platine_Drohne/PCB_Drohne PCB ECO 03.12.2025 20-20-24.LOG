@@ -1,0 +1,32 @@
+Removed Pin From Net: NetName=ESP Pin 27 Pin=-10
+Removed Pin From Net: NetName=ESP Pin 26 Pin=-11
+Change Component Footprint: Designator=C2 Old Footprint=C_POL_E3,5-8 x 11.5mm New Footprint=C_POL_RM2-10,5 x 12.5mm
+Change Component Footprint: Designator=C4 Old Footprint=C_POL_E3,5-8 x 11.5mm New Footprint=C_POL_RM2-10,5 x 12.5mm
+Change Component Footprint: Designator=C5 Old Footprint=C_POL_E3,5-8 x 11.5mm New Footprint=C_POL_RM2-10,5 x 12.5mm
+Change Component Footprint: Designator=C1 Old Footprint=C_RM2-025X075 x 6.5mm New Footprint=C_RM2-025X075 - with Ceramic Disc Capacitor
+Change Component Footprint: Designator=C3 Old Footprint=C_RM2-025X075 x 6.5mm New Footprint=C_RM2-025X075 - with Ceramic Disc Capacitor
+Change Component Footprint: Designator=C6 Old Footprint=C_RM2-025X075 x 6.5mm New Footprint=C_RM2-025X075 - with Ceramic Disc Capacitor
+Change Component Comment : Designator=C5 Old Comment=470-1000uF New Comment=100uF
+Change Component Designator: OldDesignator= NewDesignator=ESP
+Change component parameters: Designator = "C2" ("C2"); Footprint = "C_POL_E3,5-8 x 11.5mm"; UniqueID = "\IZLLBKGD" ("\IZLLBKGD")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "07-Sep-2019"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "21-Feb-2011"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rated Voltage"; Value = "63V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C4" ("C4"); Footprint = "C_POL_E3,5-8 x 11.5mm"; UniqueID = "\VIEQZDBW" ("\VIEQZDBW")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "07-Sep-2019"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "21-Feb-2011"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rated Voltage"; Value = "63V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C5" ("C5"); Footprint = "C_POL_E3,5-8 x 11.5mm"; UniqueID = "\OUNUKUGB" ("\OUNUKUGB")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "07-Sep-2019"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "21-Feb-2011"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rated Voltage"; Value = "63V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100uF"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=ESP Pin 26 Pin=ESP-10
+Added Pin To Net: NetName=ESP Pin 27 Pin=ESP-11
+Added Member To Class: ClassName=Schematic_Drohne Member=Component ESP ESP_WROVER_DEVKIT
+Added Room: Name=Schematic_Drohne

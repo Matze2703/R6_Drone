@@ -1,0 +1,9 @@
+Added Pin To Net: NetName=GND Pin=-21
+Added Pin To Net: NetName=GND Pin=-27
+Added Pin To Net: NetName=GND Pin=-31
+Added Pin To Net: NetName=GND Pin=-32
+Added Pin To Net: NetName=GND Pin=-40
+Added Member To Class: ClassName=Schematic_Drohne Member=Component Balance IN Schraubklemme 1x4
+Added Member To Class: ClassName=Schematic_Drohne Member=Component Balance OUT Schraubklemme 1x4
+Added Member To Class: ClassName=Schematic_Drohne Member=Component Ladestecker Schraubklemme
+Added Member To Class: ClassName=Schematic_Drohne Member=Component  ESP_WROVER_DEVKIT

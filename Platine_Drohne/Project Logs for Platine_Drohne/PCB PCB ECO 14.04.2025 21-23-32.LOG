@@ -1,0 +1,53 @@
+Change Component Designator: OldDesignator=Motoranschluss NewDesignator=Motoranschluss_1
+Change Component Designator: OldDesignator=Motoranschluss? NewDesignator=Motoranschluss_2
+Add Pin To Net: Unknown Pin: Pin A4988_1-1
+Add Pin To Net: Unknown Pin: Pin A4988_1-2
+Add Pin To Net: Unknown Pin: Pin A4988_1-3
+Add Pin To Net: Unknown Pin: Pin A4988_1-4
+Add Pin To Net: Unknown Pin: Pin A4988_1-5
+Add Pin To Net: Unknown Pin: Pin A4988_1-6
+Add Pin To Net: Unknown Pin: Pin A4988_1-7
+Add Pin To Net: Unknown Pin: Pin A4988_1-8
+Add Pin To Net: Unknown Pin: Pin A4988_1-9
+Add Pin To Net: Unknown Pin: Pin A4988_1-10
+Add Pin To Net: Unknown Pin: Pin A4988_1-11
+Add Pin To Net: Unknown Pin: Pin A4988_1-12
+Add Pin To Net: Unknown Pin: Pin A4988_1-13
+Add Pin To Net: Unknown Pin: Pin A4988_1-14
+Add Pin To Net: Unknown Pin: Pin A4988_1-15
+Add Pin To Net: Unknown Pin: Pin A4988_1-16
+Add Pin To Net: Unknown Pin: Pin A4988_2-1
+Add Pin To Net: Unknown Pin: Pin A4988_2-2
+Add Pin To Net: Unknown Pin: Pin A4988_2-3
+Add Pin To Net: Unknown Pin: Pin A4988_2-4
+Add Pin To Net: Unknown Pin: Pin A4988_2-5
+Add Pin To Net: Unknown Pin: Pin A4988_2-6
+Add Pin To Net: Unknown Pin: Pin A4988_2-7
+Add Pin To Net: Unknown Pin: Pin A4988_2-8
+Add Pin To Net: Unknown Pin: Pin A4988_2-9
+Add Pin To Net: Unknown Pin: Pin A4988_2-10
+Add Pin To Net: Unknown Pin: Pin A4988_2-11
+Add Pin To Net: Unknown Pin: Pin A4988_2-12
+Add Pin To Net: Unknown Pin: Pin A4988_2-13
+Add Pin To Net: Unknown Pin: Pin A4988_2-14
+Add Pin To Net: Unknown Pin: Pin A4988_2-15
+Add Pin To Net: Unknown Pin: Pin A4988_2-16
+Add Pin To Net: Unknown Pin: Pin Akku-1
+Add Pin To Net: Unknown Pin: Pin Akku-2
+Add Pin To Net: Unknown Pin: Pin ESP-10
+Add Pin To Net: Unknown Pin: Pin ESP-11
+Add Pin To Net: Unknown Pin: Pin ESP-12
+Add Pin To Net: Unknown Pin: Pin ESP-13
+Add Pin To Net: Unknown Pin: Pin ESP-14
+Add Pin To Net: Unknown Pin: Pin ESP-15
+Add Pin To Net: Unknown Pin: Pin ESP-19
+Add Pin To Net: Unknown Pin: Pin ESP-20
+Add Pin To Net: Unknown Pin: Pin LM2596-1
+Add Pin To Net: Unknown Pin: Pin LM2596-2
+Add Pin To Net: Unknown Pin: Pin LM2596-3
+Add Pin To Net: Unknown Pin: Pin LM2596-4
+Add Class Member: Failed to add class member : Component A4988_1 Stepper_Driver
+Add Class Member: Failed to add class member : Component A4988_2 Stepper_Driver
+Add Class Member: Failed to add class member : Component Akku DC 11.1V
+Add Class Member: Failed to add class member : Component ESP ESP_WROVER_DEVKIT
+Add Class Member: Failed to add class member : Component LM2596 DC-DC Converter

@@ -1,0 +1,6 @@
+Change Component Designator: OldDesignator=LiPo Balance IN NewDesignator=Balance IN
+Change Component Designator: OldDesignator=LiPo Balance OUT NewDesignator=Balance OUT
+Change Net Name : Old Net Name=NetD1_1 New Net Name=NetBalance IN_1
+Change Net Name : Old Net Name=NetLiPo Balance IN_2 New Net Name=NetBalance IN_2
+Change Net Name : Old Net Name=NetLiPo Balance IN_3 New Net Name=NetBalance IN_3
+Change Net Name : Old Net Name=NetLiPo Balance IN_4 New Net Name=NetBalance IN_4

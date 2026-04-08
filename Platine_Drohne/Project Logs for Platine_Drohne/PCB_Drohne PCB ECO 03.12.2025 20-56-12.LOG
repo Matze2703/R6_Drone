@@ -1,0 +1,18 @@
+Added Component: Designator=A4988_1(A4988)
+Added Pin To Net: NetName=GND Pin=A4988_1-1
+Added Pin To Net: NetName=VCC 5V Pin=A4988_1-2
+Added Pin To Net: NetName=VCC 5V Pin=A4988_1-3
+Added Pin To Net: NetName=GND Pin=A4988_1-4
+Added Pin To Net: NetName=NetA4988_1_5 Pin=A4988_1-5
+Added Pin To Net: NetName=NetA4988_1_5 Pin=A4988_1-6
+Added Pin To Net: NetName=ESP Pin 26 Pin=A4988_1-7
+Added Pin To Net: NetName=ESP Pin 27 Pin=A4988_1-8
+Added Pin To Net: NetName=VCC 11.1V Pin=A4988_1-9
+Added Pin To Net: NetName=GND Pin=A4988_1-10
+Added Pin To Net: NetName=NetA4988_1_11 Pin=A4988_1-11
+Added Pin To Net: NetName=NetA4988_1_12 Pin=A4988_1-12
+Added Pin To Net: NetName=NetA4988_1_13 Pin=A4988_1-13
+Added Pin To Net: NetName=NetA4988_1_14 Pin=A4988_1-14
+Added Pin To Net: NetName=VCC 5V Pin=A4988_1-15
+Added Pin To Net: NetName=GND Pin=A4988_1-16
+Added Member To Class: ClassName=Schematic_Drohne Member=Component A4988_1 Stepper_Driver

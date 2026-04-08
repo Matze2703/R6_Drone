@@ -1,0 +1,10 @@
+Added Component: Designator=ESP(ESP_WROVER_DEVKIT)
+Added Pin To Net: NetName=ESP Pin 27 Pin=ESP-10
+Added Pin To Net: NetName=ESP Pin 26 Pin=ESP-11
+Added Pin To Net: NetName=ESP Pin 14 Pin=ESP-12
+Added Pin To Net: NetName=ESP Pin 12 Pin=ESP-13
+Added Pin To Net: NetName=GND Pin=ESP-14
+Added Pin To Net: NetName=ESP Pin 13 Pin=ESP-15
+Added Pin To Net: NetName=VCC 5V Pin=ESP-19
+Added Pin To Net: NetName=VCC 5V Pin=ESP-20
+Added Member To Class: ClassName=Schematic_Drohne Member=Component ESP ESP_WROVER_DEVKIT

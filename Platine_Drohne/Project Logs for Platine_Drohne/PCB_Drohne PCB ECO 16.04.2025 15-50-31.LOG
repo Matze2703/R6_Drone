@@ -1,0 +1,6 @@
+Added Component: Designator=LM2596(LM2596)
+Added Pin To Net: NetName=VCC 11.1V Pin=LM2596-1
+Added Pin To Net: NetName=GND Pin=LM2596-2
+Added Pin To Net: NetName=VCC 5V Pin=LM2596-3
+Added Pin To Net: NetName=GND Pin=LM2596-4
+Added Member To Class: ClassName=Schematic_Drohne Member=Component LM2596 DC-DC Converter

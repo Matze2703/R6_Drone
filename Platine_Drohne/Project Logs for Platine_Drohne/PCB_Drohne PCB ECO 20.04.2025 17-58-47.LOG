@@ -1,0 +1,31 @@
+Change Component Comment : Designator=R1 Old Comment=1K New Comment=2.2K
+Change Component Designator: OldDesignator= NewDesignator=ESP
+Change component parameters: Designator = "R1" ("R1"); Footprint = "R_0204V/RM1 - 1k"; UniqueID = "\JUUTPOSX" ("\JUUTPOSX")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "07-Sep-2019"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "21-Feb-2011"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "2.2K"; VariantName = "[No Variations]"
+Added Component: Designator=D1(D_DO35-RM3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "01-Nov-2012"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "04-Jun-2011"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Michael Kupfner"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SimulationModellSource"; Value = "Vishay Telefunken Discrete Diode"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Added Component: Designator=R2(R_0204V/RM1 - 1k)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "07-Sep-2019"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "21-Feb-2011"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "5.6K"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetLiPo Balance IN_2 Pin=R1-1
+Added Pin To Net: NetName=ESP Pin 4 Pin=ESP-33
+Added Pin To Net: NetName=ESP Pin 4 Pin=R1-2
+Added Pin To Net: NetName=ESP Pin 4 Pin=R2-1
+Added Pin To Net: NetName=ESP Pin 4 Pin=D1-C
+Added Net: Name=ESP Pin 4
+Added Pin To Net: NetName=NetD1_1 Pin=LiPo Balance IN-1
+Added Pin To Net: NetName=NetD1_1 Pin=LiPo Balance OUT-4
+Added Pin To Net: NetName=NetD1_1 Pin=R2-2
+Added Pin To Net: NetName=NetD1_1 Pin=D1-A
+Added Net: Name=NetD1_1
+Added Member To Class: ClassName=Schematic_Drohne Member=Component D1 BZX55C3V3
+Added Member To Class: ClassName=Schematic_Drohne Member=Component R2 5.6K

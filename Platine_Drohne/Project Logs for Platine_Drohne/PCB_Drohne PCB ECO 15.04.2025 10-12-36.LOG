@@ -1,0 +1,12 @@
+Added Component: Designator=Motoranschluss_1(CTB0502-4)
+Added Component: Designator=Motoranschluss_2(CTB0502-4)
+Added Pin To Net: NetName=NetA4988_1_11 Pin=Motoranschluss_1-1
+Added Pin To Net: NetName=NetA4988_1_12 Pin=Motoranschluss_1-2
+Added Pin To Net: NetName=NetA4988_1_13 Pin=Motoranschluss_1-3
+Added Pin To Net: NetName=NetA4988_1_14 Pin=Motoranschluss_1-4
+Added Pin To Net: NetName=NetA4988_2_11 Pin=Motoranschluss_2-1
+Added Pin To Net: NetName=NetA4988_2_12 Pin=Motoranschluss_2-2
+Added Pin To Net: NetName=NetA4988_2_13 Pin=Motoranschluss_2-3
+Added Pin To Net: NetName=NetA4988_2_14 Pin=Motoranschluss_2-4
+Added Member To Class: ClassName=Schematic_Drohne Member=Component Motoranschluss_1 Schraubklemme 1x4
+Added Member To Class: ClassName=Schematic_Drohne Member=Component Motoranschluss_2 Schraubklemme 1x4

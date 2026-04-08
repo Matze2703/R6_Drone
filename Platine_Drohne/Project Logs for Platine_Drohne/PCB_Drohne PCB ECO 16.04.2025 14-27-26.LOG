@@ -1,0 +1,62 @@
+Removed Member From Class: ClassName=Schematic_Drohne Member=LiPo Balance-Stecker IN
+Removed Member From Class: ClassName=Schematic_Drohne Member=LiPo Balance-Stecker OUT
+Change Component Footprint: Designator=C1 Old Footprint=C_POL_RM2-8,5 New Footprint=C_RM2-025X075
+Change Component Footprint: Designator=Akku Old Footprint=HDR1X2 New Footprint=Schraubklemme_1x2
+Change Component Footprint: Designator=LiPo Ladestecker Old Footprint=HDR1X2 New Footprint=Schraubklemme_1x2
+Change Component Comment : Designator=Akku Old Comment= New Comment=Schraubklemme
+Change Component Comment : Designator=LiPo Ladestecker Old Comment= New Comment=Schraubklemme
+Change Component Comment : Designator=C1 Old Comment=100uF New Comment=100nF
+Change Component Designator: OldDesignator= NewDesignator=ESP
+Change Component Designator: OldDesignator=C2 NewDesignator=C4
+Change component parameters: Designator = "Akku" ("Akku"); Footprint = "HDR1X2"; UniqueID = "\BKZQSWBV" ("\BKZQSWBV")
+Change component parameters: Designator = "C1" ("C1"); Footprint = "C_POL_RM2-8,5"; UniqueID = "\VEGDUTRV" ("\VEGDUTRV")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "07-Sep-2019"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "21-Feb-2011"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rated Voltage"; Value = "50V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "LiPo Ladestecker" ("LiPo Ladestecker"); Footprint = "HDR1X2"; UniqueID = "\QLASOTGT" ("\QLASOTGT")
+Added Component: Designator=C2(C_POL_RM2-8,5)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "07-Sep-2019"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "21-Feb-2011"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated Voltage"; Value = "50V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100uF"; VariantName = "[No Variations]"
+Added Component: Designator=C3(C_RM2-025X075)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "07-Sep-2019"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "21-Feb-2011"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated Voltage"; Value = "50V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Added Component: Designator=C5(C_POL_RM2-8,5)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "07-Sep-2019"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "21-Feb-2011"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated Voltage"; Value = "16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100uF"; VariantName = "[No Variations]"
+Added Component: Designator=LiPo Balance Stecker IN(CTB0502-4)
+Added Component: Designator=LiPo Balance Stecker OUT(CTB0502-4)
+Added Pin To Net: NetName=VCC 11.1V Pin=C2-1
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=VCC 11.1V Pin=C3-1
+Added Pin To Net: NetName=GND Pin=C3-2
+Added Pin To Net: NetName=VCC 5V Pin=C5-1
+Added Pin To Net: NetName=GND Pin=C5-2
+Added Pin To Net: NetName=NetLiPo Balance Stecker IN_1 Pin=LiPo Balance Stecker IN-1
+Added Pin To Net: NetName=NetLiPo Balance Stecker IN_1 Pin=LiPo Balance Stecker OUT-4
+Added Net: Name=NetLiPo Balance Stecker IN_1
+Added Pin To Net: NetName=NetLiPo Balance Stecker IN_2 Pin=LiPo Balance Stecker IN-2
+Added Pin To Net: NetName=NetLiPo Balance Stecker IN_2 Pin=LiPo Balance Stecker OUT-3
+Added Net: Name=NetLiPo Balance Stecker IN_2
+Added Pin To Net: NetName=NetLiPo Balance Stecker IN_3 Pin=LiPo Balance Stecker IN-3
+Added Pin To Net: NetName=NetLiPo Balance Stecker IN_3 Pin=LiPo Balance Stecker OUT-2
+Added Net: Name=NetLiPo Balance Stecker IN_3
+Added Pin To Net: NetName=NetLiPo Balance Stecker IN_4 Pin=LiPo Balance Stecker IN-4
+Added Pin To Net: NetName=NetLiPo Balance Stecker IN_4 Pin=LiPo Balance Stecker OUT-1
+Added Net: Name=NetLiPo Balance Stecker IN_4
+Added Member To Class: ClassName=Schematic_Drohne Member=Component C3 100nF
+Added Member To Class: ClassName=Schematic_Drohne Member=Component C4 100uF
+Added Member To Class: ClassName=Schematic_Drohne Member=Component C5 100uF
+Added Member To Class: ClassName=Schematic_Drohne Member=Component ESP ESP_WROVER_DEVKIT
+Added Member To Class: ClassName=Schematic_Drohne Member=Component LiPo Balance Stecker IN Schraubklemme 1x4
+Added Member To Class: ClassName=Schematic_Drohne Member=Component LiPo Balance Stecker OUT Schraubklemme 1x4

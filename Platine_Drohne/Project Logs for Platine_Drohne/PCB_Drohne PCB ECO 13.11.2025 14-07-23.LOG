@@ -1,0 +1,3 @@
+Change Component Designator: OldDesignator= NewDesignator=ESP
+Added Member To Class: ClassName=Schematic_Drohne Member=Component ESP ESP_WROVER_DEVKIT
+Added Room: Name=Schematic_Drohne

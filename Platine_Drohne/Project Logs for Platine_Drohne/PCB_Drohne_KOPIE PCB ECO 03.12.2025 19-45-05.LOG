@@ -1,0 +1,9 @@
+Change Component Footprint: Designator=C4 Old Footprint=C_POL_E3,5-8 x 11.5mm New Footprint=C_POL_RM2-10,5 x 12.5mm
+Change Component Footprint: Designator=C5 Old Footprint=C_POL_E3,5-8 x 11.5mm New Footprint=C_POL_RM2-10,5 x 12.5mm
+Change Component Comment : Designator=C5 Old Comment=470-1000uF New Comment=100uF
+Change component parameters: Designator = "C5" ("C5"); Footprint = "C_POL_E3,5-8 x 11.5mm"; UniqueID = "\OUNUKUGB" ("\OUNUKUGB")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "07-Sep-2019"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "21-Feb-2011"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rated Voltage"; Value = "63V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100uF"; VariantName = "[No Variations]"

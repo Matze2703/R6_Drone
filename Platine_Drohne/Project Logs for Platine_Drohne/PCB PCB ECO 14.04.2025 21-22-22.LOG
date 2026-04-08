@@ -1,0 +1,97 @@
+Added Component: Designator=C1(C_POL_RM2-8,5)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "07-Sep-2019"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "21-Feb-2011"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated Voltage"; Value = "50V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100uF"; VariantName = "[No Variations]"
+Added Component: Designator=C2(C_POL_RM2-8,5)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "07-Sep-2019"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "21-Feb-2011"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated Voltage"; Value = "50V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Usage"; Value = "only permitted for non-commercial purposes at HTL I Innsbruck"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100uF"; VariantName = "[No Variations]"
+Added Component: Designator=LiPo Balance-Stecker IN(HDR1X4)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=LiPo Balance-Stecker OUT(HDR1X4)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=LiPo Ladestecker(HDR1X2)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=Motoranschluss?(HDR1X4)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=Motoranschluss(HDR1X4)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=RGB-Streifen(HDR1X3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Net: Name=ESP Pin 12
+Added Pin To Net: NetName=ESP Pin 13 Pin=RGB-Streifen-2
+Added Net: Name=ESP Pin 13
+Added Net: Name=ESP Pin 14
+Added Net: Name=ESP Pin 26
+Added Net: Name=ESP Pin 27
+Added Pin To Net: NetName=GND Pin=C1-2
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=GND Pin=LiPo Ladestecker-2
+Added Pin To Net: NetName=GND Pin=RGB-Streifen-1
+Added Net: Name=GND
+Added Net: Name=NetA4988_1_5
+Added Pin To Net: NetName=NetA4988_1_11 Pin=Motoranschluss-1
+Added Net: Name=NetA4988_1_11
+Added Pin To Net: NetName=NetA4988_1_12 Pin=Motoranschluss-2
+Added Net: Name=NetA4988_1_12
+Added Pin To Net: NetName=NetA4988_1_13 Pin=Motoranschluss-3
+Added Net: Name=NetA4988_1_13
+Added Pin To Net: NetName=NetA4988_1_14 Pin=Motoranschluss-4
+Added Net: Name=NetA4988_1_14
+Added Net: Name=NetA4988_2_5
+Added Pin To Net: NetName=NetA4988_2_11 Pin=Motoranschluss?-1
+Added Net: Name=NetA4988_2_11
+Added Pin To Net: NetName=NetA4988_2_12 Pin=Motoranschluss?-2
+Added Net: Name=NetA4988_2_12
+Added Pin To Net: NetName=NetA4988_2_13 Pin=Motoranschluss?-3
+Added Net: Name=NetA4988_2_13
+Added Pin To Net: NetName=NetA4988_2_14 Pin=Motoranschluss?-4
+Added Net: Name=NetA4988_2_14
+Added Pin To Net: NetName=NetLiPo Balance-Stecker IN_1 Pin=LiPo Balance-Stecker IN-1
+Added Pin To Net: NetName=NetLiPo Balance-Stecker IN_1 Pin=LiPo Balance-Stecker OUT-4
+Added Net: Name=NetLiPo Balance-Stecker IN_1
+Added Pin To Net: NetName=NetLiPo Balance-Stecker IN_2 Pin=LiPo Balance-Stecker IN-2
+Added Pin To Net: NetName=NetLiPo Balance-Stecker IN_2 Pin=LiPo Balance-Stecker OUT-3
+Added Net: Name=NetLiPo Balance-Stecker IN_2
+Added Pin To Net: NetName=NetLiPo Balance-Stecker IN_3 Pin=LiPo Balance-Stecker IN-3
+Added Pin To Net: NetName=NetLiPo Balance-Stecker IN_3 Pin=LiPo Balance-Stecker OUT-2
+Added Net: Name=NetLiPo Balance-Stecker IN_3
+Added Pin To Net: NetName=NetLiPo Balance-Stecker IN_4 Pin=LiPo Balance-Stecker IN-4
+Added Pin To Net: NetName=NetLiPo Balance-Stecker IN_4 Pin=LiPo Balance-Stecker OUT-1
+Added Net: Name=NetLiPo Balance-Stecker IN_4
+Added Pin To Net: NetName=VCC 5V Pin=RGB-Streifen-3
+Added Net: Name=VCC 5V
+Added Pin To Net: NetName=VCC 11.1V Pin=C1-1
+Added Pin To Net: NetName=VCC 11.1V Pin=C2-1
+Added Pin To Net: NetName=VCC 11.1V Pin=LiPo Ladestecker-1
+Added Net: Name=VCC 11.1V
+Add Class Member: Failed to add class member : Component A4988_1 Stepper_Driver
+Add Class Member: Failed to add class member : Component A4988_2 Stepper_Driver
+Add Class Member: Failed to add class member : Component Akku DC 11.1V
+Added Member To Class: ClassName=Schematic_Drohne Member=Component C1 100uF
+Added Member To Class: ClassName=Schematic_Drohne Member=Component C2 100uF
+Add Class Member: Failed to add class member : Component ESP ESP_WROVER_DEVKIT
+Added Member To Class: ClassName=Schematic_Drohne Member=Component LiPo Balance-Stecker IN
+Added Member To Class: ClassName=Schematic_Drohne Member=Component LiPo Balance-Stecker OUT
+Added Member To Class: ClassName=Schematic_Drohne Member=Component LiPo Ladestecker
+Add Class Member: Failed to add class member : Component LM2596 DC-DC Converter
+Added Member To Class: ClassName=Schematic_Drohne Member=Component Motoranschluss?
+Added Member To Class: ClassName=Schematic_Drohne Member=Component Motoranschluss
+Added Member To Class: ClassName=Schematic_Drohne Member=Component RGB-Streifen
+Added Room: Name=Schematic_Drohne
