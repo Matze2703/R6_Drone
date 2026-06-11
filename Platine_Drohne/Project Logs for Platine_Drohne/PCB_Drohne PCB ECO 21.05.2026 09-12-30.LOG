@@ -1,0 +1,25 @@
+Removed Pin From Net: NetName=ESP Pin 26 Pin=-10
+Removed Pin From Net: NetName=ESP Pin 27 Pin=-11
+Removed Pin From Net: NetName=ESP Pin 14 Pin=-12
+Removed Pin From Net: NetName=ESP Pin 12 Pin=-13
+Change Component Designator: OldDesignator= NewDesignator=ESP_1
+Change Component Designator: OldDesignator=Akku IN NewDesignator=Akku
+Change Component Designator: OldDesignator=Akku OUT NewDesignator=Ladestecker
+Added Component: Designator=Gyro(HDR1X8)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=U?(MODULE_TMC2209_SILENTSTEPSTICK)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/TMC2209%20SILENTSTEPSTICK/Trinamic/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Trinamic Motion Control GmbH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TMC2209 SILENTSTEPSTICK"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/TMC2209%20SILENTSTEPSTICK/Trinamic/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VCC 5V Pin=Gyro-1
+Added Pin To Net: NetName=GND Pin=Gyro-2
+Added Member To Class: ClassName=Schematic_Drohne Member=Component Akku Schraubklemme
+Added Member To Class: ClassName=Schematic_Drohne Member=Component ESP_1 ESP_WROVER_DEVKIT
+Added Member To Class: ClassName=Schematic_Drohne Member=Component Gyro Header 8
+Added Member To Class: ClassName=Schematic_Drohne Member=Component Ladestecker Schraubklemme
+Added Member To Class: ClassName=Schematic_Drohne Member=Component U? TMC2209_SILENTSTEPSTICK

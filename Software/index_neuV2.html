@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R6 Drone Feed - picamera.js</title>
+  <link rel="icon" type="image/png" href="/icon.png">
+  <style>
+    :root {
+      --r6-orange: #ff9a00;
+      --r6-blue: #00a2ff;
+      --r6-white: #ececec;
+      --r6-dark: #11141a;
+      --hud-font: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Montserrat, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    body {
+      background-color: #05070a;
+      color: var(--r6-white);
+      font-family: var(--hud-font);
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    /* Screen Container mimicking a tactical monitor / visor */
+    .drone-viewport {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Video elements */
+    video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      display: none; /* Hidden until connected */
+    }
+
+    /* Canvas for simulated analog TV Static */
+    /* Rendered at a fixed low resolution (320x180) and CSS-upscaled for RPi performance */
+    #staticCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      display: none; /* Hidden by default */
+      image-rendering: pixelated; /* Nearest-neighbour upscale — cheapest on GPU */
+    }
+
+    /* SMPTE Color Bars Screen (NO SIGNAL) */
+    .no-signal-screen {
+      position: absolute;
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      z-index: 3;
+    }
+    .smpte-row-1 { display: flex; flex: 7; width: 100%; }
+    .smpte-row-1 > div { flex: 1; }
+    .smpte-row-2 { display: flex; flex: 1; width: 100%; }
+    .smpte-row-2 > div { flex: 1; }
+    .smpte-row-3 { display: flex; flex: 2; width: 100%; }
+    .no-signal-text {
+      position: absolute;
+      top: 50%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #111;
+      color: var(--r6-white);
+      font-size: 42px;
+      padding: 10px 40px;
+      letter-spacing: 4px;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    /* CRT Scanlines & Vignette Overlays */
+    /* Pure CSS — zero JS cost. Opacity reduced slightly to ease compositing on RPi. */
+    .screen-effects {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      pointer-events: none;
+      will-change: opacity; /* Own compositing layer — prevents full-page repaint */
+      background: 
+        radial-gradient(circle, transparent 50%, rgba(0,0,0,0.65) 100%),
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%), 
+        linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.04));
+      background-size: 100% 100%, 100% 4px, 6px 100%;
+      opacity: 0.75; /* Reduced from 0.85 — less compositor work, still visible */
+    }
+
+    /* Rainbow Six Siege HUD Overlay Elements */
+    .hud-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 40px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.8);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* Corner Brackets matching R6 UI */
+    .bracket {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+    }
+    .bracket-tl { top: 40px; left: 40px; border-right: none; border-bottom: none; }
+    .bracket-tr { top: 40px; right: 40px; border-left: none; border-bottom: none; }
+    .bracket-bl { bottom: 40px; left: 40px; border-right: none; border-top: none; }
+    .bracket-br { bottom: 40px; right: 40px; border-left: none; border-top: none; }
+
+    /* Top HUD Row */
+    .hud-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .drone-meta {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .drone-id {
+      color: var(--r6-orange);
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .drone-id::before {
+      content: '▲';
+      font-size: 12px;
+    }
+
+    /* Compass element mimicking R6 Siege */
+    .compass-container {
+      position: absolute;
+      top: 35px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 320px;
+      text-align: center;
+    }
+    .compass-tape {
+      font-size: 14px;
+      font-family: monospace;
+      white-space: nowrap;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 2px;
+    }
+    .compass-indicator {
+      color: var(--r6-orange);
+      font-size: 10px;
+      margin-top: -2px;
+    }
+
+    .signal-status {
+      text-align: right;
+      font-size: 13px;
+    }
+    .battery-bar {
+      width: 80px;
+      height: 6px;
+      background: rgba(255,255,255,0.2);
+      margin-top: 5px;
+      display: inline-block;
+      position: relative;
+    }
+    .battery-level {
+      width: 85%;
+      height: 100%;
+      background: var(--r6-white);
+    }
+
+    /* Center Crosshair / Reticle */
+    .hud-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .reticle {
+      width: 60px;
+      height: 60px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      position: relative;
+    }
+    .reticle::before, .reticle::after {
+      content: '';
+      position: absolute;
+      background: rgba(255,255,255,0.6);
+    }
+    /* Horizontal crosshair ticks */
+    .reticle::before {
+      top: 50%; left: -10px; width: 80px; height: 1px;
+      background: linear-gradient(90deg, #fff, transparent 30%, transparent 70%, #fff);
+    }
+    /* Vertical crosshair ticks */
+    .reticle::after {
+      left: 50%; top: -10px; width: 1px; height: 80px;
+      background: linear-gradient(#fff, transparent 30%, transparent 70%, #fff);
+    }
+    .center-dot {
+      width: 4px;
+      height: 4px;
+      background: var(--r6-orange);
+      border-radius: 50%;
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Bottom HUD Row */
+    .hud-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 100%;
+    }
+
+    .location-info {
+      font-size: 16px;
+    }
+    .room-name {
+      font-size: 20px;
+      color: var(--r6-white);
+      text-transform: uppercase;
+    }
+
+    .action-cooldowns {
+      text-align: right;
+    }
+    .cooldown-indicator {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 4px;
+    }
+    .cooldown-progress {
+      width: 120px;
+      height: 4px;
+      background: rgba(255,255,255,0.2);
+      position: relative;
+    }
+    .cooldown-fill {
+      width: 0%;
+      height: 100%;
+      background: var(--r6-orange);
+    }
+
+    /* ── Tactical Panel ─────────────────────────────────────────────────── */
+    .tactical-panel {
+      position: absolute;
+      top: 88px;        /* Sits just below the HUD top-left bracket */
+      left: 0;
+      z-index: 100;
+      width: 300px;
+      background: rgba(8, 10, 14, 0.96);
+      border-top: 1px solid rgba(255,154,0,0.35);
+      border-right: 1px solid rgba(255,154,0,0.35);
+      border-bottom: 1px solid rgba(255,154,0,0.15);
+      /* Left edge flush with viewport edge — orange bar is the panel's left border */
+      border-left: 3px solid var(--r6-orange);
+      will-change: transform;
+      transition: transform 0.35s cubic-bezier(0.25, 1, 0.3, 1);
+      /* Clip the top-right corner for that R6 angular look */
+      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+    }
+
+    .tactical-panel.collapsed {
+      transform: translateX(-303px); /* Full width + border */
+    }
+
+    /* Hatched header bar */
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px 8px 14px;
+      background: repeating-linear-gradient(
+        -45deg,
+        rgba(255,154,0,0.06),
+        rgba(255,154,0,0.06) 2px,
+        transparent 2px,
+        transparent 8px
+      );
+      border-bottom: 1px solid rgba(255,154,0,0.25);
+    }
+
+    .panel-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--r6-orange);
+      font-weight: 700;
+    }
+
+    .panel-title-sub {
+      font-size: 9px;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+      margin-top: 1px;
+    }
+
+    /* The pull-tab that sticks out when panel is collapsed */
+    .panel-toggle {
+      position: absolute;
+      right: -36px;
+      top: 0;
+      width: 36px;
+      height: 36px;
+      background: rgba(8, 10, 14, 0.96);
+      border-top: 1px solid rgba(255,154,0,0.35);
+      border-right: 1px solid rgba(255,154,0,0.35);
+      border-bottom: 1px solid rgba(255,154,0,0.15);
+      border-left: none;
+      color: var(--r6-orange);
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+    }
+    .panel-toggle:hover { background: rgba(255,154,0,0.12); }
+
+    .panel-body {
+      padding: 14px 14px 16px 14px;
+    }
+
+    .panel-row {
+      margin-bottom: 9px;
+    }
+
+    .panel-row label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 4px;
+    }
+    /* Small orange tick before each label */
+    .panel-row label::before {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 3px;
+      background: var(--r6-orange);
+      flex-shrink: 0;
+    }
+
+    .panel-row input {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-left: 2px solid rgba(255,154,0,0.4);
+      padding: 6px 10px;
+      color: var(--r6-white);
+      font-family: monospace;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
+    .panel-row input:focus {
+      border-color: var(--r6-orange);
+      border-left-color: var(--r6-orange);
+      outline: none;
+      background: rgba(255,154,0,0.05);
+    }
+
+    .btn-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-top: 14px;
+    }
+
+    button.tactical-btn {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: var(--r6-white);
+      padding: 8px 6px;
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-family: var(--hud-font);
+      cursor: pointer;
+      letter-spacing: 1.5px;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    button.tactical-btn:hover {
+      background: rgba(255,255,255,0.14);
+      border-color: rgba(255,255,255,0.35);
+    }
+
+    button.tactical-btn.primary {
+      background: var(--r6-orange);
+      color: #000;
+      border: none;
+      font-weight: 900;
+    }
+    button.tactical-btn.primary:hover {
+      background: #ffb733;
+    }
+    button.tactical-btn.danger {
+      border-color: rgba(255,60,60,0.4);
+      color: rgba(255,120,120,0.9);
+    }
+    button.tactical-btn.danger:hover {
+      background: rgba(255,60,60,0.15);
+      border-color: rgba(255,60,60,0.7);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tactical-panel" id="controlsPanel">
+    <button class="panel-toggle" onclick="togglePanel()" title="Toggle comms panel">⚙</button>
+
+    <div class="panel-header">
+      <div>
+        <div class="panel-title">Net Comms</div>
+        <div class="panel-title-sub">P2P · MQTT · Direct</div>
+      </div>
+    </div>
+
+    <div class="panel-body">
+      <div class="panel-row">
+        <label>Device UID</label>
+        <input type="text" id="deviceUid" placeholder="Device UID" value="R6-Drone">
+      </div>
+      <div class="panel-row">
+        <label>MQTT Host</label>
+        <input type="text" id="mqttHost" placeholder="MQTT Host" value="192.168.4.1">
+      </div>
+      <div class="panel-row">
+        <label>MQTT Path</label>
+        <input type="text" id="mqttPath" placeholder="MQTT Path" value="/mqtt">
+      </div>
+      <div class="panel-row">
+        <label>MQTT Port</label>
+        <input type="number" id="mqttPort" placeholder="MQTT Port" value="8083">
+      </div>
+      <div class="panel-row">
+        <label>Username</label>
+        <input type="text" id="mqttUsername" placeholder="MQTT Username">
+      </div>
+      <div class="panel-row">
+        <label>Password</label>
+        <input type="password" id="mqttPassword" placeholder="MQTT Password">
+      </div>
+      <div class="btn-group">
+        <button class="tactical-btn primary" onclick="start()">▶ Connect</button>
+        <button class="tactical-btn danger" onclick="stop()">■ Disconnect</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="drone-viewport" id="viewport">
+    
+    <video id="videoElement" autoplay playsinline muted></video>
+
+    <div class="screen-effects"></div>
+
+    <canvas id="staticCanvas"></canvas>
+
+    <div id="noSignalScreen" class="no-signal-screen">
+      <div class="smpte-row-1">
+        <div style="background: #EBEBEB;"></div>
+        <div style="background: #EAE500;"></div>
+        <div style="background: #00E5EA;"></div>
+        <div style="background: #00EA00;"></div>
+        <div style="background: #EA00EA;"></div>
+        <div style="background: #EA0000;"></div>
+        <div style="background: #0000EA;"></div>
+      </div>
+      <div class="smpte-row-2">
+        <div style="background: #0000EA;"></div>
+        <div style="background: #111111;"></div>
+        <div style="background: #EA00EA;"></div>
+        <div style="background: #111111;"></div>
+        <div style="background: #00E5EA;"></div>
+        <div style="background: #111111;"></div>
+        <div style="background: #EBEBEB;"></div>
+      </div>
+      <div class="smpte-row-3">
+        <div style="background: #444444; flex: 1.5;"></div>
+        <div style="background: #FFFFFF; flex: 1.5;"></div>
+        <div style="background: #111111; flex: 1.5;"></div>
+        <div style="background: #222222; flex: 5.5;"></div>
+      </div>
+      <div class="no-signal-text">NO SIGNAL</div>
+    </div>
+
+    <div class="hud-layer">
+      <div class="bracket bracket-tl"></div>
+      <div class="bracket bracket-tr"></div>
+      <div class="bracket bracket-bl"></div>
+      <div class="bracket bracket-br"></div>
+
+      <div class="hud-top">
+        <div class="drone-meta">
+          <div class="drone-id">DRONE 01</div>
+          <div style="font-size: 11px; opacity: 0.6; margin-top: 2px;">MODEL: RX-200</div>
+        </div>
+
+        <div class="compass-container">
+          <div class="compass-tape">NW . . 330 . . N . . 030 . . NE</div>
+          <div class="compass-indicator">▼</div>
+        </div>
+
+        <div class="signal-status">
+          <div>FEED STATUS: <span id="feedStatusLabel" style="color: var(--r6-orange);">STANDBY</span></div>
+          <div>BATT: 94%</div>
+          <div class="battery-bar"><div class="battery-level"></div></div>
+        </div>
+      </div>
+
+      <div class="hud-center">
+        <div class="reticle">
+          <div class="center-dot"></div>
+        </div>
+      </div>
+
+      <div class="hud-bottom">
+        <div class="location-info">
+          <div style="font-size: 11px; opacity: 0.6; text-transform: uppercase;">Current Deployment Area</div>
+          <div class="room-name" id="roomLabel">STANDBY MODE</div>
+        </div>
+
+        <div class="action-cooldowns">
+          <div class="cooldown-indicator">JUMP HYDRAULICS: NOT INSTALLED</div>
+          <div class="cooldown-progress"><div class="cooldown-fill"></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="module">
+    // PiCamera loaded lazily — page works without the asset file present
+    let PiCamera = null;
+    try {
+      ({ PiCamera } = await import('/assets/picamera.esm.js'));
+    } catch {
+      console.warn('picamera.esm.js not found — camera connections disabled, preview still works.');
+    }
+
+    let videoRef = document.getElementById('videoElement');
+    let staticCanvas = document.getElementById('staticCanvas');
+    let noSignalScreen = document.getElementById('noSignalScreen');
+    let ctx = staticCanvas.getContext('2d');
+    let feedStatusLabel = document.getElementById('feedStatusLabel');
+    let roomLabel = document.getElementById('roomLabel');
+    
+    let conn = null;
+    let staticInterval = null;
+    let transitionTimeout = null;
+
+    // Canvas Matrix Dimensions & Static Render loop
+    // Fixed low resolution (320×180) — CSS scales it up. Cuts pixel work by ~97% vs full HD.
+    const STATIC_W = 320;
+    const STATIC_H = 180;
+
+    function resizeCanvas() {
+      // Only set once; the canvas stays at fixed low res — CSS does the upscaling
+      if (staticCanvas.width !== STATIC_W) {
+        staticCanvas.width  = STATIC_W;
+        staticCanvas.height = STATIC_H;
+      }
+    }
+    // No resize listener needed — canvas size is fixed regardless of window size
+    resizeCanvas();
+
+    // Pre-allocate ImageData once so renderStatic() never allocates on each tick
+    const staticImageData = ctx.createImageData(STATIC_W, STATIC_H);
+    const staticBuffer = new Uint32Array(staticImageData.data.buffer);
+
+    function renderStatic() {
+      const len = staticBuffer.length;
+      for (let i = 0; i < len; i++) {
+        if (Math.random() > 0.15) {
+          const val = Math.floor(Math.random() * 255);
+          staticBuffer[i] = (255 << 24) | (val << 16) | (val << 8) | val;
+        } else {
+          staticBuffer[i] = 0xFF000000;
+        }
+      }
+      ctx.putImageData(staticImageData, 0, 0);
+    }
+    
+    function startStaticEffect() {
+      if(!staticInterval) {
+        // 100 ms = 10 fps — plenty for noise, half the CPU of the original 50 ms
+        staticInterval = setInterval(renderStatic, 100);
+      }
+      staticCanvas.style.display = 'block';
+      noSignalScreen.style.display = 'none';
+      videoRef.style.display = 'none';
+    }
+
+    function stopStaticEffect() {
+      clearInterval(staticInterval);
+      staticInterval = null;
+      staticCanvas.style.display = 'none';
+    }
+
+    function clearTransition() {
+      if(transitionTimeout) {
+        clearTimeout(transitionTimeout);
+        transitionTimeout = null;
+      }
+    }
+
+    // Dynamic UI state engine triggers applied to connection handshakes
+    function handleSignalAcquisition(activeVideoElement, streamCallback) {
+      clearTransition();
+      startStaticEffect();
+      
+      feedStatusLabel.textContent = 'TUNING...';
+      feedStatusLabel.style.color = '#ffff00';
+
+      transitionTimeout = setTimeout(() => {
+        stopStaticEffect();
+        activeVideoElement.style.display = 'block';
+        
+        feedStatusLabel.textContent = 'ONLINE';
+        feedStatusLabel.style.color = '#00ff00';
+        roomLabel.textContent = 'DEPLOYMENT AREA ACTIVE';
+        document.getElementById('controlsPanel').classList.add('collapsed');
+        
+        streamCallback();
+      }, 1000);
+    }
+
+    function resetToNoSignal(immediate = false) {
+      clearTransition();
+      if (immediate) {
+        stopStaticEffect();
+        videoRef.style.display = 'none';
+        noSignalScreen.style.display = 'flex';
+        feedStatusLabel.textContent = 'STANDBY';
+        feedStatusLabel.style.color = 'var(--r6-orange)';
+        roomLabel.textContent = 'STANDBY MODE';
+        return;
+      }
+
+      startStaticEffect();
+      feedStatusLabel.textContent = 'DISCONNECTING...';
+      feedStatusLabel.style.color = 'var(--r6-orange)';
+      roomLabel.textContent = 'STANDBY MODE';
+      
+      transitionTimeout = setTimeout(() => {
+        stopStaticEffect();
+        videoRef.style.display = 'none';
+        noSignalScreen.style.display = 'flex';
+        feedStatusLabel.textContent = 'STANDBY';
+      }, 800);
+    }
+
+    // ==========================================
+    // Original Connection Logic (P2P MQTT Mode)
+    // ==========================================
+    window.start = function start() {
+      if (conn) { conn.terminate(); }
+      resetToNoSignal(true);
+
+      const deviceUid = document.getElementById('deviceUid').value;
+      const mqttHost = document.getElementById('mqttHost').value;
+      const mqttPath = document.getElementById('mqttPath').value;
+      const mqttPort = parseInt(document.getElementById('mqttPort').value);
+      const mqttUsername = document.getElementById('mqttUsername').value;
+      const mqttPassword = document.getElementById('mqttPassword').value;
+
+      conn = new PiCamera({
+        deviceUid: deviceUid,
+        mqttHost: mqttHost,
+        mqttPath: mqttPath,
+        mqttPort: mqttPort,
+        mqttUsername: mqttUsername,
+        mqttPassword: mqttPassword,
+        enableAudio: false,
+        stunUrls: ["stun:stun1.l.google.com:19302", "stun:stun2.l.google.com:19302"],
+      });
+
+      conn.onStream = (stream) => {
+        handleSignalAcquisition(videoRef, () => {
+          videoRef.srcObject = stream;
+        });
+      };
+      conn.connect();
+    };
+
+    window.stop = function stop() {
+      if (conn) {
+        conn.terminate();
+        conn = null;
+      }
+      videoRef.srcObject = null;
+      resetToNoSignal(false);
+    };
+
+    // Toggle configuration panel collapse
+    window.togglePanel = function togglePanel() {
+      document.getElementById('controlsPanel').classList.toggle('collapsed');
+    };
+  </script>
+</body>
+</html>
